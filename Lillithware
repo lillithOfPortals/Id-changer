@@ -1,0 +1,33 @@
+Load the Orion Library
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+
+-- Create the main window
+local Window = OrionLib:MakeWindow({
+    Name = "Lillithware (Id Changer)",
+    HidePremium = false,
+    SaveConfig = true,
+    ConfigFolder = "Id Changer",
+    IntroText = "Lilithware"
+})
+
+-- Create tabs
+local MainTab = Window:MakeTab({
+    Name = "Main",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+
+-- Add a Button for Owner Id Changer
+MainTab:AddButton({
+    Name = "Owner Id Changer",
+    Callback = function()
+        -- Insert the code for Owner Id Changer
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/lillithOfPortals/Id-changer/main/Ho"))()
+    end
+})
+
+-- Credits Tab
+CreditsTab:AddParagraph("Credits", "Made By Lilith")
+
+-- Initialize the Orion Library
+OrionLib:Init
