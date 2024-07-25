@@ -1,28 +1,4 @@
-- Load the Orion Library
-local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-
--- Create the main window
-local Window = OrionLib:MakeWindow({
-    Name = "Lillithware (OLD TVO)",
-    HidePremium = false,
-    SaveConfig = true,
-    ConfigFolder = "OldTVO",
-    IntroText = "Lilithware"
-})
-
--- Create tabs
-local MainTab = Window:MakeTab({
-    Name = "Main",
-    Icon = "rbxassetid://4483345998",
-    PremiumOnly = false
-})
-
--- Add a Button for Owner Id Changer
-MainTab:AddButton({
-    Name = "Owner Id Changer",
-    Callback = function()
-        -- Insert the code for Owner Id Changer
-        local mt = getrawmetatable(game);
+local mt = getrawmetatable(game);
 local old = mt.__namecall
 local readonly = setreadonly or make_writeable
 
@@ -41,11 +17,3 @@ mt.__namecall = function(self, ...)
 
     return old(self, ...)
 end
-    end
-})
-
--- Credits Tab
-CreditsTab:AddParagraph("Credits", "Made By Lilith")
-
--- Initialize the Orion Library
-OrionLib:Init
